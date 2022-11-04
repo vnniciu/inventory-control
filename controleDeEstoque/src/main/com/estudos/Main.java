@@ -10,10 +10,12 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         ItemService itemService = new ItemService();
         Item item = new Item();
-        item.setNomeDoItem("Caneta");
+        item.setNomeDoItem("Produto1");
         item.setDataEntrada(LocalDate.now());
-        item.setDescricao("Caneta bic");
-        item.setConstaEmEstoque(true);
+        item.setDescricao("Descricao produto");
+        item.setConstaEmEstoque("S");
         itemService.salvarItem(item);
+
+        itemService.buscarItem().forEach(a -> System.out.println(a.getNomeDoItem()+ " " +a.getConstaEmEstoque()));
     }
 }

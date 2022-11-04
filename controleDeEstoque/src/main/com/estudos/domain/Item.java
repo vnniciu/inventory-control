@@ -55,7 +55,7 @@ public class Item {
         return constaEmEstoque == true  ? "S" : "N" ;
     }
 
-    public void setConstaEmEstoque(boolean constaEmEstoque) {
-        this.constaEmEstoque = constaEmEstoque;
+    public void setConstaEmEstoque(String constaEmEstoque) {
+        this.constaEmEstoque = constaEmEstoque.equals("S") ? true : false;
     }
 }
